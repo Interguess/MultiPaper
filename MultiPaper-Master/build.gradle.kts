@@ -13,6 +13,12 @@ repositories {
     maven {
         url = uri("https://repo.velocitypowered.com/snapshots/")
     }
+    maven {
+        url = uri("https://repo.interguessweb.de/maven-public/")
+    }
+    maven {
+        url = uri("https://jitpack.io")
+    }
 }
 
 dependencies {
@@ -24,9 +30,14 @@ dependencies {
     implementation("se.llbit:jo-nbt:1.3.0")
     implementation("ch.qos.logback:logback-classic:1.5.3")
     implementation("org.slf4j:slf4j-api:2.0.12")
+    implementation("com.github.Carleslc.Simple-YAML:Simple-Yaml:1.8.4")
+    implementation("de.interguess:java-module-loader:1.0.3-beta")
+    implementation("de.interguess:datastores:2.0-SNAPSHOT")
+
     compileOnly("net.md-5:bungeecord-api:1.16-R0.4")
     compileOnly("com.velocitypowered:velocity-api:3.0.1")
     compileOnly("org.projectlombok:lombok:1.18.30")
+
     annotationProcessor("com.velocitypowered:velocity-api:3.0.1")
     annotationProcessor("org.projectlombok:lombok:1.18.30")
 }
