@@ -1,4 +1,4 @@
-package puregero.multipaper.server.util;
+package puregero.multipaper.server;
 
 /*
  ** 2011 January 5

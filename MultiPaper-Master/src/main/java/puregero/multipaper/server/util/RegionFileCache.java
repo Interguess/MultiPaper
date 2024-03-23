@@ -25,7 +25,9 @@ package puregero.multipaper.server.util;
 
 // A simple cache and wrapper for efficiently multiple RegionFiles simultaneously.
 
+import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
+import puregero.multipaper.server.RegionFile;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -38,14 +40,12 @@ import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
 @Slf4j
+@UtilityClass
 public class RegionFileCache {
 
     private static final int MAX_CACHE_SIZE = Integer.getInteger("max.regionfile.cache.size", 256);
 
     private static final LinkedHashMap<File, Reference<RegionFile>> cache = new LinkedHashMap<>(16, 0.75f, true);
-
-    private RegionFileCache() {
-    }
 
     public static synchronized boolean isRegionFileOpen(File regionDir, int chunkX, int chunkZ) {
         File file = new File(regionDir, "r." + (chunkX >> 5) + "." + (chunkZ >> 5) + ".mca");

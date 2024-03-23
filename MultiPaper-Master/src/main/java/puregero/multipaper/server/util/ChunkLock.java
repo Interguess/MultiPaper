@@ -1,7 +1,9 @@
 package puregero.multipaper.server.util;
 
+import lombok.experimental.UtilityClass;
 import puregero.multipaper.mastermessagingprotocol.ChunkKey;
 
+@UtilityClass
 public class ChunkLock {
 
     private static final int LOCK_COUNT = 64;
