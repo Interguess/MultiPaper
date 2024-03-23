@@ -3,12 +3,15 @@ package puregero.multipaper.server.bootstrap;
 import lombok.extern.slf4j.Slf4j;
 import puregero.multipaper.server.CommandLineInput;
 import puregero.multipaper.server.MultiPaperServer;
+import puregero.multipaper.server.plugin.PluginManager;
 import puregero.multipaper.server.proxy.ProxyServer;
 
 @Slf4j
 public class MultiPaperStandalone {
 
     public static void main(String[] args) {
+        log.info("Starting multipaper-master...");
+
         MultiPaperServer.DAEMON = false;
 
         String address = null;
@@ -37,6 +40,8 @@ public class MultiPaperStandalone {
                 System.exit(1);
             }
         }
+
+        new PluginManager().loadPlugins();
 
         new MultiPaperServer(address, port);
 

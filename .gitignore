@@ -53,3 +53,4 @@ MultiPaper-API
 multipaper.jar
 
 !gradle/wrapper/gradle-wrapper.jar
+plugins/

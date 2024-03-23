@@ -2,6 +2,7 @@ package puregero.multipaper.server.handlers;
 
 import lombok.extern.slf4j.Slf4j;
 import org.yaml.snakeyaml.DumperOptions;
+import org.yaml.snakeyaml.LoaderOptions;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.SafeConstructor;
 import puregero.multipaper.mastermessagingprotocol.messages.masterbound.CallDataStorageMessage;
@@ -144,7 +145,7 @@ public class CallDataStorageHandler {
 
             if (file.isFile()) {
                 try (FileInputStream in = new FileInputStream(file)) {
-                    yaml = new Yaml(new SafeConstructor()).load(in);
+                    yaml = new Yaml(new SafeConstructor(new LoaderOptions())).load(in); //todo: check
                 } catch (IOException e) {
                     log.error("Failed to load datastorage.yaml", e);
                 }
