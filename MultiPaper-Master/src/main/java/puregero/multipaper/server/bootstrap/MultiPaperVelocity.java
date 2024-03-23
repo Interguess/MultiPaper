@@ -23,7 +23,7 @@ import java.util.Collection;
 @Plugin(id = "multipaper-velocity",
         name = "MultiPaper Velocity",
         version = "1.0.0",
-        authors = {"PureGero"}
+        authors = {"MultiPaper Contributors"}
 )
 public class MultiPaperVelocity {
     private final ProxyServer server;
